@@ -1,0 +1,14 @@
+{
+  "testForm": {
+    "object": {
+      "test": "test value"
+    },
+    "options": [
+      {
+        "type": "text",
+        "name": "test",
+        "label": "testing label"
+      }
+    ]
+  }
+}
