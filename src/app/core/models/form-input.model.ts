@@ -1,4 +1,5 @@
 import { Validator } from './validators.model';
+import { Options } from './options.model';
 
 export type FormInputTypes = 'text' | 'select' | 'radio' | 'date';
 
@@ -7,5 +8,6 @@ export interface FormInput {
   name: string;
   label?: string;
   placeholder?: string;
+  options?: Options[];
   validators?: Validator[];
 }

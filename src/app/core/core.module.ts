@@ -1,8 +1,15 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { FormInputBuilderComponent, InputTextComponent, FormBuilderComponent } from './components';
+import {
+  FormInputBuilderComponent,
+  InputTextComponent,
+  FormBuilderComponent,
+  InputSelectComponent,
+  InputRadioComponent,
+  InputDateComponent
+} from './components';
 
 @NgModule({
   imports: [
@@ -13,13 +20,21 @@ import { FormInputBuilderComponent, InputTextComponent, FormBuilderComponent } f
   declarations: [
     FormBuilderComponent,
     FormInputBuilderComponent,
-    InputTextComponent
+    InputTextComponent,
+    InputSelectComponent,
+    InputRadioComponent,
+    InputDateComponent
   ],
   exports: [
     FormBuilderComponent,
     FormInputBuilderComponent,
-    InputTextComponent
+    InputTextComponent,
+    InputSelectComponent,
+    InputRadioComponent,
+    InputDateComponent
   ],
-  providers: []
+  providers: [
+    DatePipe
+  ]
 })
 export class CoreModule {}

@@ -10,13 +10,18 @@ import { FormBuilderUtils } from '@core/services/form-builder-utils.service';
     <form
       *ngIf="form"
       novalidate
-      [formGroup]="form">
+      [formGroup]="form"
+      (ngSubmit)="submitForm()">
 
       <form-input-builder
         *ngFor="let formInputOptions of formOptions"
         [parentForm]="form"
         [formInputOptions]="formInputOptions">
       </form-input-builder>
+
+      <button type="submit">
+        Submit
+      </button>
 
     </form>
   `
@@ -32,5 +37,9 @@ export class FormBuilderComponent implements OnInit {
 
   ngOnInit() {
     this.form = this.formUtils.createFormGroup(this.dataObject, this.formOptions);
+  }
+
+  submitForm() {
+    console.log(this.form);
   }
 }
