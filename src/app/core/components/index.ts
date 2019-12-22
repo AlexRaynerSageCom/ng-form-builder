@@ -5,3 +5,4 @@ export * from './input-text/input-text.component';
 export * from './input-select/input-select.component';
 export * from './input-radio/input-radio.component';
 export * from './input-date/input-date.component';
+export * from './input-checkbox/input-checkbox.component';

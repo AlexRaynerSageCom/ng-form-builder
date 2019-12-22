@@ -8,7 +8,8 @@ import {
   FormBuilderComponent,
   InputSelectComponent,
   InputRadioComponent,
-  InputDateComponent
+  InputDateComponent,
+  InputCheckboxComponent
 } from './components';
 
 @NgModule({
@@ -23,7 +24,8 @@ import {
     InputTextComponent,
     InputSelectComponent,
     InputRadioComponent,
-    InputDateComponent
+    InputDateComponent,
+    InputCheckboxComponent
   ],
   exports: [
     FormBuilderComponent,
@@ -31,7 +33,8 @@ import {
     InputTextComponent,
     InputSelectComponent,
     InputRadioComponent,
-    InputDateComponent
+    InputDateComponent,
+    InputCheckboxComponent
   ],
   providers: [
     DatePipe

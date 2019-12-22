@@ -19,7 +19,8 @@ export class AppComponent {
     testField: 'some string value',
     testSelectField: '3',
     testRadioField: 'hello',
-    testDateField: '2020-05-21T01:00:00+01:00'
+    testDateField: '2020-05-21T01:00:00+01:00',
+    testCheckboxField: true
   };
 
   formInputOptions: FormInput[] = [
@@ -54,6 +55,11 @@ export class AppComponent {
       type: 'date',
       name: 'testDateField',
       label: 'Date field label:'
+    },
+    {
+      type: 'checkbox',
+      name: 'testCheckboxField',
+      label: 'Checkbox field label:'
     }
   ];
 
