@@ -10,6 +10,8 @@ import { FormInput, Validator } from '@core/models';
 export class FormBuilderUtils {
   validatorMap = {
     required: () => Validators.required,
+    minlength: (length: number) => Validators.minLength(length),
+    maxlength: (length: number) => Validators.maxLength(length)
   };
 
   constructor(private fb: FormBuilder,
@@ -37,7 +39,7 @@ export class FormBuilderUtils {
     const validatorArr = [];
 
     validators.map((validator: Validator) => {
-      validatorArr.push(this.validatorMap[validator.type]());
+      validatorArr.push(this.validatorMap[validator.type](validator.value));
     });
 
     return validatorArr;

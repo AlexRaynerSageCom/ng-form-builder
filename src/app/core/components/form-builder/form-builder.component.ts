@@ -19,7 +19,7 @@ import { FormBuilderUtils } from '@core/services/form-builder-utils.service';
         [formInputOptions]="formInputOptions">
       </form-input-builder>
 
-      <button type="submit">
+      <button type="submit" [disabled]="form.invalid">
         Submit
       </button>
 

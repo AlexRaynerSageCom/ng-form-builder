@@ -16,7 +16,7 @@ import { FormInput } from '@core/models';
 })
 export class AppComponent {
   dataObject: any = {
-    testField: 'some string value',
+    testField: 'some',
     testSelectField: '3',
     testRadioField: 'hello',
     testDateField: '2020-05-21T01:00:00+01:00',
@@ -29,7 +29,9 @@ export class AppComponent {
       name: 'testField',
       label: 'Field label:',
       validators: [
-        { type: 'required' }
+        { type: 'required' },
+        { type: 'minlength', value: 2, customMessage: 'Min length 2 chars'},
+        { type: 'maxlength', value: 5, customMessage: 'Max length 5 chars'}
       ]
     },
     {

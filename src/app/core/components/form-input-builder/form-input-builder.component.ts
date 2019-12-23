@@ -15,39 +15,19 @@ import { FormInput } from '@core/models';
 // TODO: figure out how to map these keys to the types in the form input model
 const inputOptions = {
   text: {
-    component: InputTextComponent,
-    binder: (comp: InputTextComponent, parentForm: FormGroup, formInputOptions: FormInput) => {
-      comp.parentForm = parentForm;
-      comp.formInputOptions = formInputOptions;
-    }
+    component: InputTextComponent
   },
   select: {
-    component: InputSelectComponent,
-    binder: (comp: InputSelectComponent, parentForm: FormGroup, formInputOptions: FormInput) => {
-      comp.parentForm = parentForm;
-      comp.formInputOptions = formInputOptions;
-    }
+    component: InputSelectComponent
   },
   radio: {
-    component: InputRadioComponent,
-    binder: (comp: InputSelectComponent, parentForm: FormGroup, formInputOptions: FormInput) => {
-      comp.parentForm = parentForm;
-      comp.formInputOptions = formInputOptions;
-    }
+    component: InputRadioComponent
   },
   date: {
-    component: InputDateComponent,
-    binder: (comp: InputDateComponent, parentForm: FormGroup, formInputOptions: FormInput) => {
-      comp.parentForm = parentForm;
-      comp.formInputOptions = formInputOptions;
-    }
+    component: InputDateComponent
   },
   checkbox: {
-    component: InputCheckboxComponent,
-    binder: (comp: InputCheckboxComponent, parentForm: FormGroup, formInputOptions: FormInput) => {
-      comp.parentForm = parentForm;
-      comp.formInputOptions = formInputOptions;
-    }
+    component: InputCheckboxComponent
   }
 };
 
@@ -86,13 +66,14 @@ export class FormInputBuilderComponent implements OnChanges {
     const ref = this.formInput.createComponent(factory);
 
     try {
-      inputOptions[this.formInputOptions.type].binder(
-        ref.instance,
-        this.parentForm,
-        this.formInputOptions
-      );
+      this.bindInputsToFormInput(ref.instance);
     } catch (err) {
       console.error(err);
     }
+  }
+
+  bindInputsToFormInput(componentInstance: any) {
+    componentInstance.parentForm = this.parentForm;
+    componentInstance.formInputOptions = this.formInputOptions;
   }
 }
