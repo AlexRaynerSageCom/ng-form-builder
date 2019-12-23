@@ -16,6 +16,11 @@ import { InputBaseComponent } from '../input-base/input-base.component';
           </option>
         </select>
       </label>
+      <input-error
+        *ngIf="hasErrors()"
+        [errors]="getErrors()"
+        [customErrorMessages]="getCustomErrorMessages()">
+      </input-error>
     </div>
   `
 })

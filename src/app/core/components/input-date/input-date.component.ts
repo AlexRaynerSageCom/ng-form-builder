@@ -12,6 +12,11 @@ import { InputBaseComponent } from '../input-base/input-base.component';
           type="date"
           [formControlName]="formInputOptions.name"/>
       </label>
+      <input-error
+        *ngIf="hasErrors()"
+        [errors]="getErrors()"
+        [customErrorMessages]="getCustomErrorMessages()">
+      </input-error>
     </div>
   `
 })

@@ -56,7 +56,10 @@ export class AppComponent {
     {
       type: 'date',
       name: 'testDateField',
-      label: 'Date field label:'
+      label: 'Date field label:',
+      validators: [
+        { type: 'required' }
+      ]
     },
     {
       type: 'checkbox',

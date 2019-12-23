@@ -10,6 +10,11 @@ import { InputBaseComponent } from '../input-base/input-base.component';
         {{ formInputOptions.label }}
         <input type="checkbox" [formControlName]="formInputOptions.name"/>
       </label>
+      <input-error
+        *ngIf="hasErrors()"
+        [errors]="getErrors()"
+        [customErrorMessages]="getCustomErrorMessages()">
+      </input-error>
     </div>
   `
 })
