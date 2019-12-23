@@ -5,7 +5,9 @@ import { InputBaseComponent } from '../input-base/input-base.component';
 @Component({
   selector: 'input-select',
   template: `
-    <div [formGroup]="parentForm">
+    <div
+      class="input-container"
+      [formGroup]="parentForm">
       <label>
         {{ formInputOptions.label }}
         <select [formControlName]="formInputOptions.name">
