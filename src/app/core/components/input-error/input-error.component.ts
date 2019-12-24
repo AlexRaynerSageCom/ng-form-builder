@@ -8,10 +8,13 @@ import { ErrorMessages } from '@core/models';
 @Component({
   selector: 'input-error',
   template: `
-    <div *ngFor="let message of messagesToDisplay">
+    <div
+      *ngFor="let message of messagesToDisplay"
+      class="input-error">
       {{ message }}
     </div>
-  `
+  `,
+  styleUrls: ['./input-error.component.less']
 })
 export class InputErrorComponent implements OnChanges {
   @Input() errors: ValidationErrors;

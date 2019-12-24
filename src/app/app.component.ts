@@ -6,7 +6,6 @@ import { FormInput } from '@core/models';
   selector: 'app-root',
   template: `
     <div>
-      App
       <form-builder
         [dataObject]="dataObject"
         [formOptions]="formInputOptions">
@@ -64,7 +63,7 @@ export class AppComponent {
     {
       type: 'checkbox',
       name: 'testCheckboxField',
-      label: 'Checkbox field label:'
+      label: 'Checkbox field label'
     }
   ];
 

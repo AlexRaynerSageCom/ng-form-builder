@@ -24,7 +24,8 @@ import { FormBuilderUtils } from '@core/services/form-builder-utils.service';
       </button>
 
     </form>
-  `
+  `,
+  styleUrls: ['./form-builder.component.less']
 })
 export class FormBuilderComponent implements OnInit {
   @Input() dataObject: any;
