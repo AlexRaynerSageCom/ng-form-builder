@@ -1,5 +1,5 @@
+// Angular
 import { Component } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
 import { FormInput } from '@core/models';
 
 @Component({
@@ -67,8 +67,6 @@ export class AppComponent {
       label: 'Checkbox field label'
     }
   ];
-
-  constructor(private fb: FormBuilder) {}
 
   submitted(value: any) {
     console.log(value);
