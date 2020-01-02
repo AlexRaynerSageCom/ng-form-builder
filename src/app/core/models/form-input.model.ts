@@ -1,7 +1,15 @@
 import { Validator } from './validators.model';
 import { Options } from './options.model';
 
-export type FormInputTypes = 'text' | 'select' | 'radio' | 'date' | 'checkbox';
+import {
+  INPUT_TEXT,
+  INPUT_SELECT,
+  INPUT_RADIO,
+  INPUT_DATE,
+  INPUT_CHECKBOX
+} from '@core/constants';
+
+export type FormInputTypes = INPUT_TEXT | INPUT_SELECT | INPUT_RADIO | INPUT_DATE | INPUT_CHECKBOX;
 
 export interface FormInput {
   type: FormInputTypes;

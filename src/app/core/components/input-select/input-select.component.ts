@@ -1,5 +1,7 @@
+// Angular
 import { Component } from '@angular/core';
 
+// Components
 import { InputBaseComponent } from '../input-base/input-base.component';
 
 @Component({
@@ -26,5 +28,4 @@ import { InputBaseComponent } from '../input-base/input-base.component';
     </div>
   `
 })
-export class InputSelectComponent extends InputBaseComponent {
-}
+export class InputSelectComponent extends InputBaseComponent {}

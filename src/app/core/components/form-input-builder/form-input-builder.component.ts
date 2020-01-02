@@ -1,5 +1,13 @@
 // Angular
-import { Component, ViewChild, ViewContainerRef, ComponentFactoryResolver, Input, OnChanges, SimpleChanges } from '@angular/core';
+import {
+  Component,
+  ViewChild,
+  ViewContainerRef,
+  ComponentFactoryResolver,
+  Input,
+  OnChanges,
+  SimpleChanges
+} from '@angular/core';
 import { FormGroup } from '@angular/forms';
 
 // Components
@@ -9,24 +17,32 @@ import { InputRadioComponent } from '../input-radio/input-radio.component';
 import { InputDateComponent } from '../input-date/input-date.component';
 import { InputCheckboxComponent } from '../input-checkbox/input-checkbox.component';
 
+// Constants
+import {
+  INPUT_TEXT,
+  INPUT_SELECT,
+  INPUT_RADIO,
+  INPUT_DATE,
+  INPUT_CHECKBOX
+} from '@core/constants';
+
 // Models
 import { FormInput } from '@core/models';
 
-// TODO: figure out how to map these keys to the types in the form input model
 const inputOptions = {
-  text: {
+  [INPUT_TEXT]: {
     component: InputTextComponent
   },
-  select: {
+  [INPUT_SELECT]: {
     component: InputSelectComponent
   },
-  radio: {
+  [INPUT_RADIO]: {
     component: InputRadioComponent
   },
-  date: {
+  [INPUT_DATE]: {
     component: InputDateComponent
   },
-  checkbox: {
+  [INPUT_CHECKBOX]: {
     component: InputCheckboxComponent
   }
 };

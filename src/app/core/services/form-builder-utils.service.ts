@@ -4,14 +4,21 @@ import { DatePipe } from '@angular/common';
 
 import { FormInput, Validator } from '@core/models';
 
+import {
+  VALIDATOR_REQUIRED,
+  VALIDATOR_MAXLENGTH,
+  VALIDATOR_MINLENGTH,
+  INPUT_DATE
+} from '@core/constants';
+
 @Injectable({
   providedIn: 'root'
 })
 export class FormBuilderUtils {
   validatorMap = {
-    required: () => Validators.required,
-    minlength: (length: number) => Validators.minLength(length),
-    maxlength: (length: number) => Validators.maxLength(length)
+    [VALIDATOR_REQUIRED]: () => Validators.required,
+    [VALIDATOR_MINLENGTH]: (length: number) => Validators.minLength(length),
+    [VALIDATOR_MAXLENGTH]: (length: number) => Validators.maxLength(length)
   };
 
   constructor(private fb: FormBuilder,
@@ -23,7 +30,7 @@ export class FormBuilderUtils {
     options.map((option: FormInput) => {
       let value = data[option.name] || null;
 
-      if (option.type === 'date') {
+      if (option.type === INPUT_DATE) {
         value = this.datePipe.transform(value, 'yyyy-MM-dd');
       }
 

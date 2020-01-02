@@ -8,7 +8,8 @@ import { FormInput } from '@core/models';
     <div>
       <form-builder
         [dataObject]="dataObject"
-        [formOptions]="formInputOptions">
+        [formOptions]="formInputOptions"
+        (formSubmitted)="submitted($event)">
       </form-builder>
     </div>
   `
@@ -68,4 +69,8 @@ export class AppComponent {
   ];
 
   constructor(private fb: FormBuilder) {}
+
+  submitted(value: any) {
+    console.log(value);
+  }
 }

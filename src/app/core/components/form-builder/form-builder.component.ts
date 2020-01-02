@@ -1,8 +1,10 @@
-import { Component, Input, OnInit } from '@angular/core';
+// Angular
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormInput } from '@core/models';
 import { FormGroup } from '@angular/forms';
 
-import { FormBuilderUtils } from '@core/services/form-builder-utils.service';
+// Helpers
+import { FormBuilderUtils } from '@core/services';
 
 @Component({
   selector: 'form-builder',
@@ -19,7 +21,7 @@ import { FormBuilderUtils } from '@core/services/form-builder-utils.service';
         [formInputOptions]="formInputOptions">
       </form-input-builder>
 
-      <button type="submit" [disabled]="form.invalid">
+      <button type="submit">
         Submit
       </button>
 
@@ -32,6 +34,8 @@ export class FormBuilderComponent implements OnInit {
 
   @Input() formOptions: FormInput[];
 
+  @Output() formSubmitted: EventEmitter<any> = new EventEmitter<any>();
+
   form: FormGroup;
 
   constructor(private formUtils: FormBuilderUtils) {}
@@ -41,6 +45,10 @@ export class FormBuilderComponent implements OnInit {
   }
 
   submitForm() {
-    console.log(this.form);
+    if (this.form.invalid) {
+      return;
+    }
+
+    this.formSubmitted.emit(this.form.value);
   }
 }
